@@ -10,7 +10,7 @@ class AuthController extends Controller
         }
 
         if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            redirect('products');
+            header('Location: ' . site_url('products'));
             exit();
         }
 
