@@ -25,7 +25,7 @@ class AuthController extends Controller
                 $_SESSION['username'] = 'admin';
 
                 session_write_close(); 
-                redirect('products/index');
+                redirect('products');
                 exit();
             }
 
