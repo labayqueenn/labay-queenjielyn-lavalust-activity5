@@ -8,8 +8,10 @@ $router->any('/login', 'AuthController::login');
 
 
 
-
-$router->get('/products', 'ProductController::index')->middleware('auth');
+$router->get('/products', function()
+{
+    echo "PRODUCTS ROUTE IS WORKING";
+});
 
 $router->any('/products/create', 'ProductController::create')->middleware('auth');
 
