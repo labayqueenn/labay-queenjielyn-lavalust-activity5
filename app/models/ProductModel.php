@@ -1,0 +1,34 @@
+<?php
+defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
+
+class ProductModel extends Model
+{
+    protected $table = 'products'; // Keeping your table name
+
+    
+    public function getAll()
+    {
+        return $this->db->table($this->table)->get_all();
+    }
+
+    public function getById($id)
+    {
+        return $this->db->table($this->table)->where('id', $id)->get();
+    }
+
+    public function create($data)
+    {
+        // Inserting data into database
+        return $this->db->table($this->table)->insert($data);
+    }
+
+    public function updateProduct($id, $data)
+    {
+        return $this->db->table($this->table)->where('id', $id)->update($data);
+    }
+
+    public function deleteProduct($id)
+    {
+        return $this->db->table($this->table)->where('id', $id)->delete();
+    }
+}
